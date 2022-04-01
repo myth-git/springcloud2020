@@ -15,6 +15,7 @@ public class PaymentController {
     @Resource
     private PaymentService paymentService;
 
+
     @Value("${server.port}")
     private String serverPort;
 
@@ -33,7 +34,7 @@ public class PaymentController {
     public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id){
         Payment result = paymentService.getPaymentById(id);
         if (result != null){
-            return new CommonResult(200,"查询成功,serverPort: "+serverPort,result);
+            return new CommonResult(200,"查询成功serverPort: "+serverPort,result);
         }else {
             return new CommonResult(444,"查询失败",null);
         }

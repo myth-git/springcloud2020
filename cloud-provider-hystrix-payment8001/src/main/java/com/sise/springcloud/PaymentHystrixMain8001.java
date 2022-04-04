@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 @EnableEurekaClient
+@EnableCircuitBreaker//服务降级
 public class PaymentHystrixMain8001
 {
     public static void main(String[] args) {
